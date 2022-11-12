@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeafDisease</title>
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/sf-compact-display");
+       @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+      body {
+        font-family: "SF Compact Display", sans-serif;
+        background-color: #39375b;
+        color: #be9cba;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card{
+        margin:20vh;
+        background-color: rgba(0,0,0,10%);
+        padding-left: 40px;
+        padding-bottom: 40px;
+        padding-right: 20px;
+        border-radius: 10%;
+        box-shadow: 0 0 20px #27263f;
+      }
+
+      .card:hover{
+        box-shadow: 0 0 50px #27263f;
+      }
+      /* h2{
+        margin-left: 15%;
+      } */
+      h1{
+        color:#ecd9e9 ;
+        font-family: 'SF Pro Display', sans-serif;
+        margin: 40px 0 30px 0;
+      }
+      .content {
+        /* border: 1px solid #eaa7e2; */
+        max-width: 500px;
+
+        /* top: 30vh;
+            left:30vw */
+      }
+      .select-dropdown {
+        position: relative;
+        background-color: #f4f0f5;
+        border-radius: 3px;
+        height: 22px;
+        width: 80px;
+        margin: 0 30px 0 0; 
+      }
+      .select-dropdown select {
+        font-size: 1rem;
+        font-weight: normal;
+        max-width: 100%;
+        padding: 8px 24px 8px 10px;
+        border: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      .select-dropdown select:active,
+      .select-dropdown select:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .select-dropdown:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        width: 0;
+        height: 0;
+        margin-top: -2px;
+        border-top: 5px solid #aaa;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+      }
+      #file-upload-button{
+        height: 30px;
+        width: 80px;
+        
+      }
+
+      .btn{
+        width:70px  
+      } 
+
+      .result{
+       margin-top: 30px;
+       color: #ecd9e9 ;
+      }
+
+      .link{
+        max-width: 500px;
+      }
+      a{
+        text-decoration: none;
+        color:#ecd9e9 ;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+ <h1>Plant Disease Prediction</h1>
+    <div class="content">
+      <form method="post" action="/" enctype="multipart/form-data">
+        <dl>
+          <p>
+            <label for="cars"><h2>Choose a type of leaf:</h2></label>
+            <br />
+            <select class="select-dropdown" id="leaf" name="leaf">
+              <option value="potato">Potato</option>
+              <option value="maize">Maize</option>
+              <option value="corn">Corn</option>
+              <option value="rice">Rice</option>
+            </select>
+
+            <input
+              type="file"
+              name="file"
+              class="form-control"
+              autocomplete="off"
+              required
+            />
+          </p>
+        </dl>
+        <p>
+          <input type="submit" value="Submit" class="btn btn-info" />
+        </p>
+      </form>
+      <div class="result">
+        <h3>Prediction for your plant: {{filename}}</h3>
+ 
+      </div>
+     
+    </div>
+    </div>
+   <div class="link">
+    <h2>Useful Links: </h2>
+    <a href={{link1}}>{{filename}} link 1</a><br>
+    <br>
+    <a href={{link1}}>{{filename}} link 2</a><br>
+    <br>
+    <a href={{link1}}>{{filename}} link 3</a><br>
+   </div>
+  </body>
+</html>
